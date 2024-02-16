@@ -1,4 +1,5 @@
 import React from "react";
+import Twit from "./contact";
 
 const Hero = () => {
     return(
@@ -14,10 +15,11 @@ const Hero = () => {
             data-te-ripple-init data-te-ripple-color="light">
             Download
           </button>
+          <Twit/>
         </div>
       </div>
     </div>
 
     )
 }
-export default Hero
+export default Hero;
