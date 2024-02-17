@@ -1,13 +1,20 @@
+import React from 'react';
 import Navbar from './components/navbar';
+import Hero from './components/hero';
+import About from './components/about';
 
-function App() {
-
+const App = () => {
   return (
-    <div>
-      <Navbar />
-    </div>
+      <div>
+      <section> <Navbar/>
+      <Hero /></section>
+       <section><About /></section>
+     
+    
+          
+      </div>
   );
-
 }
+
 
 export default App;
