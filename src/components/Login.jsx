@@ -1,68 +1,71 @@
 import "../Style.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 function Login() {
-  const naviget = useNavigate();
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    let login = localStorage.getItem("login");
+    const login = localStorage.getItem("login");
     if (login) {
-      naviget("/dashboard");
+      navigate("/dashboard");
     }
-    let loginStatus = localStorage.getItem("loginStatus");
+
+    const loginStatus = localStorage.getItem("loginStatus");
     if (loginStatus) {
       setError(loginStatus);
-      setTimeout(function () {
+      setTimeout(() => {
         localStorage.clear();
         window.location.reload();
       }, 1200);
     }
-    setTimeout(function () {
+
+    setTimeout(() => {
       setMsg("");
     }, 1000);
-  }, [msg]);
+  }, [msg, navigate]);
 
-  const handleInputdChange = (e, type) => {
+  const handleInputChange = (e, type) => {
+    setError("");
     switch (type) {
       case "user":
-        setError("");
         setUser(e.target.value);
         if (e.target.value === "") {
-          setError("Username has left blank");
+          setError("Username has been left blank");
         }
         break;
       case "pass":
-        setError("");
         setPass(e.target.value);
         if (e.target.value === "") {
-          setError("Password has left blank");
+          setError("Password has been left blank");
         }
         break;
       default:
     }
   };
-
-  function loginSubmit() {
-    if (user !== "" && pass != "") {
-      var url = "http://localhost/react/login.php";
-      var headers = {
+  function RegisterRedirect() {
+    navigate("/registration");
+  }
+  const loginSubmit = () => {
+    if (user !== "" && pass !== "") {
+      const url = "http://localhost/react/login.php";
+      const headers = {
         Accept: "application/json",
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       };
-      var Data = {
+      const data = {
         user: user,
         pass: pass,
       };
+
       fetch(url, {
         method: "POST",
         headers: headers,
-        body: JSON.stringify(Data),
+        body: JSON.stringify(data),
       })
         .then((response) => response.json())
         .then((response) => {
@@ -73,22 +76,28 @@ function Login() {
             setError(response[0].result);
           } else {
             setMsg(response[0].result);
-            setTimeout(function () {
-              localStorage.setItem("login", true);
-              naviget("/dashboard");
-            }, 1000);
+            localStorage.setItem("login", true);
+            navigate("/dashboard");
           }
         })
         .catch((err) => {
-          setError(err);
-          console.log(err);
+          setError("Network error. Please try again.");
+          console.error(err);
         });
     } else {
-      setError("All field are required!");
+      setError("All fields are required!");
     }
-  }
+  };
+
   return (
     <div className="form">
+      <h2 class="flex items-center text-5xl font-extrabold dark:text-black">
+        LOGIN
+        <span class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">
+          ARAXYS
+        </span>
+      </h2>
+
       <p>
         {error !== "" ? (
           <span className="error">{error}</span>
@@ -96,29 +105,31 @@ function Login() {
           <span className="success">{msg}</span>
         )}
       </p>
-      <label>Username</label>
+      <label className="text-lg text-black font-semibold mt-5">Username</label>
       <input
+        className=""
         type="text"
-        placeholder=""
         value={user}
-        onChange={(e) => handleInputdChange(e, "user")}
+        onChange={(e) => handleInputChange(e, "user")}
       />
-      <label>Password</label>
+      <label className="text-lg text-black font-semibold mt-5">Password</label>
       <input
         type="password"
         value={pass}
-        onChange={(e) => handleInputdChange(e, "pass")}
+        onChange={(e) => handleInputChange(e, "pass")}
       />
-      <label></label>
+
       <input
         type="submit"
-        defaultValue="Login"
-        className="button"
+        value="Login"
+        className="mt-3 button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm mt-3 px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         onClick={loginSubmit}
       />
+      <p className="text-sm  font-semibold mt-5" onClick={RegisterRedirect}>
+        Sing up
+      </p>
     </div>
   );
 }
 
 export default Login;
-//

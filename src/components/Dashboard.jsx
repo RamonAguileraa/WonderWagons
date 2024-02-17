@@ -1,14 +1,15 @@
-import "../Style.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
-  const naviget = useNavigate();
+  const navigate = useNavigate();
+
   function logoutSubmit() {
     localStorage.setItem("login", false);
     localStorage.setItem("loginStatus", "Logged out successfully!");
-    naviget("/");
+    navigate("/login");
   }
+
   return (
     <div>
       <h3>Dashboard Page</h3>
@@ -18,13 +19,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-//return{
-//  <div className="form">
-//  <label> Username </label>
-//  <input type="text" />
-//  <label> Password</label>
-//  <input type="password" />
-//  <label></label>
-//  <input type="submit" defaultValue="Login" className="button" />
-//</div>
-// };

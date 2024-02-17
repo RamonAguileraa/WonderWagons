@@ -13,6 +13,7 @@ body {
   border-radius: 5px;
   padding: 30px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
+  background-color: white;
 }
 
 input[type="text"] {
@@ -31,15 +32,14 @@ input[type="password"] {
   border-radius: 5px;
   padding: 0.5rem;
 }
-.button {
+
+input[type="email"] {
   margin-top: 0.5rem;
   font-size: 1rem;
-  border: none;
+  width: 300px;
+  border: 1px solid gray;
   border-radius: 5px;
   padding: 0.5rem;
-  background: green;
-  color: white;
-  cursor: pointer;
 }
 
 label {
