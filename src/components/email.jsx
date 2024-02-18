@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Twt from './twt'
+import { Tweet } from 'react-tweet';
 
 
 export const Email = () => {
@@ -22,11 +24,12 @@ export const Email = () => {
       );
   };
   return (
+    <div id='contacto'>
     <section id="contact" className=" py-5 bg-gray-50">
     
     <div className="container mx-auto">
 
-      <h2 className="text-2xl font-medium text-center mb-8">Contact Us</h2>
+      <h2  className="text-2xl font-medium text-center mb-8">Contact Us</h2>
       
       <form className="max-w-lg mx-auto px-8 py-6 rounded-lg bg-white shadow-lg">
       
@@ -84,10 +87,23 @@ export const Email = () => {
         </button>
       
       </form>
+      <div className="max-w-lg mx-auto px-8 mt-0 tweet-container"> 
+        <Tweet 
+          className="tweet"
+          id="1758650837176356925" 
+        />
+      </div>
+
+      <div className="contact-form">
+        {/* Formulario aquí */}
+      </div>
 
     </div>
 
+    
+
   </section>
+  </div>
   );
 };
 export default Email;
