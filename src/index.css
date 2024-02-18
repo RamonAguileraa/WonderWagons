@@ -14,3 +14,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+body {
+  background-image: url("../src/assets/img/fondo\ web.jpg");
+  background-size: cover;
+  opacity: 0.8;
+}
+.contenedor-texto {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  padding: 20px;
+}
