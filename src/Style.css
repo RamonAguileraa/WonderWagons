@@ -19,7 +19,6 @@ body {
 input[type="text"] {
   margin-top: 0.5rem;
   font-size: 1rem;
-  width: 300px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0.5rem;
@@ -27,7 +26,6 @@ input[type="text"] {
 input[type="password"] {
   margin-top: 0.5rem;
   font-size: 1rem;
-  width: 300px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0.5rem;
@@ -36,7 +34,6 @@ input[type="password"] {
 input[type="email"] {
   margin-top: 0.5rem;
   font-size: 1rem;
-  width: 300px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0.5rem;

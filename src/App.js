@@ -4,11 +4,13 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import FAQ from "./components/FAQ";
+import Maps from "./components/Maps";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Maps />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/dashboard"

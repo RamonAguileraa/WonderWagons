@@ -193,6 +193,7 @@ function Registration() {
         name="pass2"
         value={pass2}
         onChange={(e) => handleInputChange(e, "pass2")}
+        className="mt-3 px-4"
       />
       <p class="flex items-center gap-1 mt-2 font-sans text-sm antialiased font-normal leading-normal text-gray-700">
         <svg
