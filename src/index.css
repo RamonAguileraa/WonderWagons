@@ -3,6 +3,58 @@
 @tailwind utilities;
 #primer {
 background-image: url(assets/img/lowpoly\ landscape.jpg);
-
 }
 
+#contact {
+    background-image: url(assets/img/contactbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="text"], 
+  input[type="email"] {
+    height: 40px;
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: auto;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background: #444;
+  }

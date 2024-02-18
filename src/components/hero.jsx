@@ -5,10 +5,10 @@ const Hero = () => {
       <section class="h-screen bg-cover bg-center" id="primer">
       <div class=" justify-center ">
       <div class="flex flex-col items-center justify-center h-full"> 
-        <div class=" mt-24  text-center">
+        <div class=" mt-40  text-center">
         <p class="text-2xl mb-4 font-bold text-cyan-500 text-pretty ">Más allá de la realidad | Juega sin límites</p>
         <h1 class="text-7xl mb-4 font-bold text-neutral-50 animate-jello ">WonderWagons</h1>
-        <h1 class="text-4xl mb-4 font-bold text-white ">Una experiencia inmersiva</h1>
+        <h1 class="text-4xl mb-4 font-thin text-white ">Una experiencia inmersiva</h1>
           
         </div>
     
@@ -20,6 +20,8 @@ const Hero = () => {
         <br />
       
       </div>
+       
+     
     </section>
 
   
